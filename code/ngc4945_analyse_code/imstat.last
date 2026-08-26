@@ -1,0 +1,21 @@
+imagename = '/Volumes/HouAstro/master/master_thesis/work_dir/NGC4945/NGC4945_H30a_spw1_v1_contsub.im'
+axes      = [0, 1]
+region    = ''
+box       = '325,325,335,335'
+chans     = ''
+stokes    = ''
+listit    = True
+verbose   = True
+mask      = ''
+logfile   = ''
+algorithm = 'classic'
+stretch   = False
+append    = True
+fence     = -1.0
+center    = 'mean'
+lside     = True
+zscore    = -1.0
+maxiter   = -1
+clmethod  = 'auto'
+niter     = 3
+#imstat( imagename='/Volumes/HouAstro/master/master_thesis/work_dir/NGC4945/NGC4945_H30a_spw1_v1_contsub.im',axes=[0, 1],region='',box='325,325,335,335',chans='',stokes='',listit=True,verbose=True,mask='',logfile='',algorithm='classic',stretch=False,append=True,fence=-1.0,center='mean',lside=True,zscore=-1.0,maxiter=-1,clmethod='auto',niter=3 )
