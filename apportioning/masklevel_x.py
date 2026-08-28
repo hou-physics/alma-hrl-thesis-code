@@ -1,4 +1,6 @@
-"""S5 — mask-level x-axis trial (EXPLORATORY, not the final scheme).
+"""Mask-level 8um apportioning of the total infrared luminosity — the
+survey's ADOPTED x-axis scheme (promoted from the S5 trial, decisions
+2026-08-21; the header below records the trial-era finding).
 
 Case-closed finding (README): predecessors' x = MASK-level TIR via the
 Spitzer 8μm fraction (Lau eq 2.8); our v1 x was PB-level → mixed apertures
