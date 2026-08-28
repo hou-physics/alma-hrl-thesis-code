@@ -1,0 +1,143 @@
+name,ra,dec,z,f60_Jy,status,hrl_line,tracer,F_Jykms,sigma_F,SN,W_kms,mask_area_beams,mask_area_arcsec2,rms_chan_mJy,rms10_mJy,rms10_pred_mJy,ir_R90_arcsec,ir_size_source,coverage,best_res_arcsec,est_size_GB,next_step
+ngc253,11.88867,-25.28824,0.00080,967.81,measured-detected,H40a,CS21,4.4389,0.1483,29.93,264.7,417.1,392.2,7.436,2.882,,195.3,WISE W4 CoG (SB-truncated),partial,,,done
+ngc4945,196.36367,-49.46789,0.00188,625.46,measured-detected,H30a,CO21,8.6669,0.565,15.34,386.8,266.8,93.3,9.019,9.085,,252.7,WISE W4 CoG (SB-truncated),partial,,,done
+eso097-013,213.29127,-65.33902,0.001448,,measured-marginal,H40a,CS21,0.4928,0.0952,5.17,299.2,79.1,557.6,1.589,1.74,,139.3,WISE W4 CoG (SB-truncated),partial,,,adjudicated — done
+he2-10,129.06329,-26.40935,0.002912,,measured-marginal,H40a,CS21,0.1931,0.0351,5.5,100.0,22.7,94.2,1.428,1.11,,79.8,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,adjudicated — done
+ngc3628,170.07041,13.59166,0.002772,54.8,measured-marginal,H30a,CO21,1.5165,0.22,6.89,327.3,120.2,175.7,10.797,3.845,,203.8,WISE W3 CoG (SB-truncated),partial,,,adjudicated — done
+ic4687,273.41596,-57.72535,0.017345,20.2,measured-upper-limit,H30a,CO21,0.2084,0.1209,1.72,287.5,136.7,13.9,1.572,2.255,,99.9,WISE W4 CoG (SB-truncated),partial,,,done
+ic5063,313.00665,-57.06747,0.011348,5.87,measured-upper-limit,H30a,CO21,0.1726,0.4845,0.36,421.3,136.2,24.3,7.376,7.464,,70.6,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ic5179,334.03787,-36.84376,0.011405,19.39,measured-upper-limit,H30a,CO21,-0.0167,0.4763,-0.04,313.4,415.0,46.5,11.893,8.508,,102.7,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+iras07251-0248,111.90642,-2.91539,0.08758,6.49,measured-upper-limit,H30a,CO21,0.316,0.2722,1.16,535.9,127.5,11.7,5.013,3.718,,33.6,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+iras09022-3615,136.05287,-36.45021,0.05964,11.64,measured-upper-limit,H30a,CO21,-0.2286,0.3697,-0.62,597.5,177.0,31.0,6.531,4.783,,30.3,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+iras17208-0014,260.84143,-0.2836,0.04281,32.13,measured-upper-limit,H30a,CO21,4.0282,1.7665,2.28,641.0,909.6,10.5,21.477,22.064,,86.9,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+iras19542+1110,299.14917,11.31806,0.06283,6.18,measured-upper-limit,H30a,CO21,0.216,0.627,0.34,421.1,144.9,28.2,13.175,9.662,,37.4,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+irasf05189-2524,80.25571,-25.36251,0.04275,13.25,measured-upper-limit,H30a,CO21,0.8306,0.4146,2.0,294.0,99.4,38.4,10.527,7.646,,67.7,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+irasf12112+0305,183.44199,2.81153,0.07268,8.18,measured-upper-limit,H30a,CO21,-0.3041,0.4037,-0.75,517.7,236.9,24.5,15.292,5.611,,249.5,WISE W4 CoG (SB-truncated),partial,,,done
+irasf14348-1447,219.40965,-15.00666,0.08247,6.82,measured-upper-limit,H30a,CO21,0.0249,0.1356,0.18,404.2,144.7,14.2,5.787,2.133,,37.4,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+irasf14378-3651,220.2459,-37.07562,0.06819,6.72,measured-upper-limit,H30a,CO21,1.2805,0.6567,1.95,317.4,103.0,19.9,15.855,11.656,,56.4,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+irasf18293-3413,278.17157,-34.19096,0.018176,35.71,measured-upper-limit,H30a,CO21,-0.1718,0.3843,-0.45,377.6,478.0,40.0,6.154,6.254,,80.2,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+irasf19297-0406,293.09294,-4.00034,0.08573,7.32,measured-upper-limit,H30a,CO21,1.4381,0.5966,2.41,499.2,4.8,283.8,22.773,8.444,,288.3,WISE W3 CoG (SB-truncated),partial,,,done
+ngc1377,54.16281,-20.90196,0.005977,7.43,measured-upper-limit,H30a,CO21,0.1916,0.1647,1.16,135.4,310.9,0.6,8.864,4.476,,76.1,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc1386,54.19187,-36.00027,0.003052,5.92,measured-upper-limit,H30a,CO21,0.2627,0.4425,0.59,305.7,332.6,75.8,7.94,8.003,,83.4,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc1808,76.92643,-37.51305,0.00334,105.55,measured-upper-limit,H40a,CS21,0.0957,0.1104,0.87,347.8,61.2,283.1,3.429,1.872,,93.0,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc2369,109.1573,-62.34375,0.0108,20.35,measured-upper-limit,H30a,CO21,-1.5092,0.5042,-2.99,503.2,103.8,109.5,9.939,7.108,,50.1,WISE W3 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc3227,155.87738,19.86508,0.003756,8.42,measured-upper-limit,H30a,CO21,-1.697,0.9787,-1.73,316.1,1171.2,17.3,24.405,17.408,,107.8,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc3256,156.96346,-43.90461,0.00928,102.63,measured-upper-limit,H40a,HCO+10,0.2685,0.1112,2.42,185.5,118.3,50.9,1.664,2.582,,81.1,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc4569,189.20757,13.16287,-0.000784,9.8,measured-upper-limit,H30a,CO21,-0.3981,0.1706,-2.33,305.8,87.5,135.3,2.17,3.085,,88.7,WISE W4 CoG (SB-truncated),partial,,,done
+ngc4826,194.18207,21.68266,0.0014,36.7,measured-upper-limit,H30a,CO21,1.9567,0.4738,4.13,302.7,6.1,246.8,6.052,8.612,,87.3,WISE W4 CoG (SB-truncated),partial,,,done
+ngc5135,201.43358,-29.83368,0.013693,16.86,measured-upper-limit,H30a,CO21,0.0527,0.134,0.39,175.1,473.2,22.9,2.234,3.202,,56.5,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc5248,204.38362,8.88506,0.003839,20.91,measured-upper-limit,H30a,CO21,-0.7307,0.3902,-1.87,147.9,256.0,24.0,7.121,10.146,,122.0,WISE W4 CoG (SB-truncated),partial,,,done
+ngc5253,204.98466,-31.64144,0.0014,29.84,measured-upper-limit,H30a,CO21,0.4914,0.2126,2.31,100.0,65.1,108.2,18.871,6.723,,80.7,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc5408,210.83179,-41.38297,0.001682,,measured-upper-limit,H30a,CO21,0.0643,0.0328,1.96,100.0,17.9,8.0,2.914,1.037,,44.0,WISE W4 CoG (SB-truncated),partial,,,done
+ngc5643,218.16991,-44.17461,0.003999,23.48,measured-upper-limit,H30a,CO21,-0.1067,0.409,-0.26,168.3,935.6,25.1,13.976,9.97,,95.9,WISE W4 CoG (SB-truncated),partial,,,done
+ngc5728,220.5997,-17.25317,0.009186,8.88,measured-upper-limit,H30a,CO21,-0.2178,0.2112,-1.03,320.4,173.3,53.9,2.621,3.731,,121.6,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc6810,295.89135,-58.65565,0.006775,18.2,measured-upper-limit,H30a,CO21,0.2683,0.3919,0.68,337.6,448.1,146.8,6.68,6.745,,96.2,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc7130,327.08121,-34.95131,0.016151,16.71,measured-upper-limit,H30a,CO21,-0.0933,0.1868,-0.5,160.0,151.0,40.8,4.6,4.67,,88.8,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc7172,330.5079,-31.86989,0.008726,5.76,measured-upper-limit,H30a,CO21,0.3978,0.377,1.06,622.6,742.2,11.1,4.73,4.778,,54.6,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc7465,345.50397,15.96487,0.006538,5.47,measured-upper-limit,H40a,HCO+10,0.006,0.0295,0.2,317.2,7.7,11.2,0.676,0.524,,157.1,WISE W4 CoG (SB-truncated),partial,,,done
+ngc7469,345.81516,8.87384,0.01642,27.33,measured-upper-limit,H40a,CS21,0.1368,0.0642,2.13,315.8,30.1,9.7,1.468,1.142,,87.6,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc7582,349.59842,-42.37057,0.00541,52.2,measured-upper-limit,H30a,CO21,0.5103,0.3371,1.51,378.0,531.9,11.6,7.681,5.483,,90.0,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,done
+ngc5128,201.36506,-43.01911,0.00187,213.29,review,,CS21,nan,nan,nan,nan,29.4,13.9,,,,163.5,WISE W4 CoG (SB-truncated),partial,,,"user review: W20 pinned at ±600 bound (cap 600, line-stop 2991) — tracer "
+ngc1313,49.55992,-66.49829,0.001568,30.71,B-mosaic,,CO21,,,,,,,,,,,,partial,,,methodology-chapter exemplar only
+ngc3627,170.06142,12.99406,0.0024,66.31,B-mosaic,,CO21,,,,,,,,,,,,partial,,,methodology-chapter exemplar only
+ngc5236,204.25231,-29.86556,0.0017,265.84,B-mosaic,,CO21,,,,,,,,,,,,partial,,,methodology-chapter exemplar only
+ngc7793,359.44866,-32.58921,0.000749,18.14,B-mosaic,,CO21,,,,,,,,,,,,partial,,,methodology-chapter exemplar only
+NGC 6814,295.66,-10.32444,0.0052,6.53,excluded (line out of band at true z),H40a,CS21+HCN10+HCO+10,,,,,,,,,0.446,,,,0.308,nan,needs different archival data (wave-1 spws miss the line at true z)
+NGC 7552,349.03958,-42.58583,0.00529,77.37,excluded (line out of band at true z),H40a,CS21+HCN10+HCO+10,,,,,,,,,0.476,,,,0.111,nan,needs different archival data (wave-1 spws miss the line at true z)
+ngc2903,143.04213,21.50083,0.0018,60.54,excluded (user),,CO21,,,,,,,,,,,,partial,,,closed — see decisions.md
+ngc55,3.75167,-39.20972,0.00042,77.0,excluded (user),,CS21,,,,,,,,,,,,partial,,,closed — see decisions.md
+CGCG 049-057,228.30292,7.225,0.01299,21.89,candidate,H40a,CS21,,,,,,,,,0.761,,,,0.048,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+CGCG 436-030,20.00583,14.35972,0.03141,10.71,candidate,H30a,CO21,,,,,,,,,0.662,,,,0.163,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+CGCG 448-020,314.34708,17.12611,0.03606,12.65,candidate,H30a,CO21,,,,,,,,,0.5,,,,0.223,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+CGCG 453-062,346.23,19.55028,0.0251,7.19,candidate,H30a,CO21,,,,,,,,,6.274,,,,6.368,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+CGCG 468-002,77.08917,17.36778,0.01679,9.66,candidate,H30a,CO21,,,,,,,,,0.571,,,,0.119,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 148-IG002,348.94417,-59.05389,0.04471,10.94,candidate,H30a,CO21,,,,,,,,,4.641,,,,4.681,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 173-G015,201.85167,-57.49,0.01003,81.44,candidate,H40a,CS21,,,,,,,,,0.522,,,,0.046,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 239-IG002,342.415,-48.85028,0.04283,7.24,candidate,H30a,CO21,,,,,,,,,0.368,,,,0.055,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 264-G036,160.77917,-46.21194,0.02335,6.07,candidate,H30a,CO21,,,,,,,,,0.514,,,,0.104,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 267-G030,183.5525,-47.22694,0.01849,5.61,candidate,H30a,CO21,,,,,,,,,0.503,,,,0.102,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 286-IG019,314.61417,-42.64917,0.04316,12.19,candidate,H30a,CO21,,,,,,,,,0.357,,,,0.058,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 297-G011/012,24.10292,-37.33222,0.01714,7.77,candidate,H30a,CO21,,,,,,,,,0.633,,,,0.135,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 319-G022,171.98375,-41.61833,0.01635,7.68,candidate,H30a,CO21,,,,,,,,,0.492,,,,0.1,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 320-G030,178.3,-39.13167,0.01078,34.38,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,0.468,,,,0.044,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 323-G077,196.61042,-40.415,0.01493,5.73,candidate,H30a,CO21,,,,,,,,,0.617,,,,0.273,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 350-IG038,9.21667,-33.55528,0.02053,6.88,candidate,H30a,CO21,,,,,,,,,6.077,,,,5.135,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 467-G027,333.6675,-27.46361,0.0175,5.58,candidate,H30a,13CO21+CO21,,,,,,,,,7.951,,,,23.731,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 5-G004,91.40208,-86.63139,0.00603,7.48,candidate,H30a,CO21,,,,,,,,,1.47,,,,1.363,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 507-G070,195.71375,-23.91944,0.0215,13.04,candidate,H30a,CO21,,,,,,,,,0.487,,,,0.098,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 557-G002,97.94292,-17.62083,0.02114,7.42,candidate,H30a,CO21,,,,,,,,,0.497,,,,0.099,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+ESO 602-G025,337.86417,-19.03194,0.02504,5.42,candidate,H30a,CO21,,,,,,,,,7.155,,,,5.03,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IC 0563/4,146.58458,3.05611,0.02047,5.26,candidate,H30a,13CO21+CO21,,,,,,,,,7.466,,,,5.654,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IC 0860,198.75917,24.62083,0.01297,18.61,candidate,H40a,CS21,,,,,,,,,0.449,,,,0.081,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IC 1623A/B,16.94292,-17.50889,0.02011,22.93,candidate,H30a+H40a,CO21+CS21+HCN10+HCO+10,,,,,,,,,0.847,,,,0.436,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IC 2545,151.5175,-33.88444,0.03425,9.79,candidate,H30a,CO21,,,,,,,,,7.972,,,,5.11,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IC 4518A/B,224.42958,-43.13361,0.01573,8.07,candidate,H30a,CO21,,,,,,,,,0.732,,,,0.134,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IC 4734,279.61042,-57.49,0.01605,14.04,candidate,H30a,CO21,,,,,,,,,0.96,,,,0.147,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+III Zw 035,26.125,17.10111,0.02754,13.25,candidate,H30a,CO21,,,,,,,,,7.927,,,,5.366,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS 05442+1732,86.79458,17.56222,0.01872,10.02,candidate,H30a,13CO21+CO21,,,,,,,,,7.002,,,,6.435,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS 08355-4944,129.25958,-49.90889,0.0259,9.44,candidate,H30a,CO21,,,,,,,,,0.663,,,,0.104,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS 13120-5453,198.77583,-55.15667,0.03076,41.11,candidate,H30a+H40a,CO21+CS21,,,,,,,,,0.428,,,,0.114,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS 17578-0400,270.13333,-4.01528,0.01324,27.69,candidate,H40a,CS21,,,,,,,,,0.626,,,,0.043,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F01364-1042,24.71917,-10.45417,0.04843,6.62,candidate,H30a,CO21,,,,,,,,,0.454,,,,0.026,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F03359+1523,54.70333,15.54889,0.03519,5.97,candidate,H30a,CO21,,,,,,,,,7.334,,,,5.486,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F05187-1017,80.27625,-10.24583,0.02827,5.39,candidate,H30a,CO21,,,,,,,,,8.152,,,,5.21,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F06076-2139,92.43792,-21.67278,0.03745,6.43,candidate,H30a,CO21,,,,,,,,,7.661,,,,5.304,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F06592-6313,104.91792,-63.29806,0.02296,5.74,candidate,H30a,CO21,,,,,,,,,0.62,,,,0.107,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F10173+0828,155.00042,8.22528,0.04893,5.61,candidate,H30a,CO21,,,,,,,,,7.334,,,,5.64,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F10565+2448,164.8225,24.54389,0.04312,12.1,candidate,H40a,CS21,,,,,,,,,7.529,,,,14.155,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F16164-0746,244.79292,-7.89917,0.02715,10.29,candidate,H30a,CO21,,,,,,,,,0.712,,,,0.105,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F16399-0937,250.66333,-9.71972,0.02701,8.42,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,0.691,,,,0.508,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F17138-1017,259.15125,-10.34444,0.01734,15.18,candidate,H30a,CO21,,,,,,,,,0.521,,,,0.113,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+IRAS F22491-1808,342.95417,-17.87417,0.07729,5.54,candidate,H30a,CO21,,,,,,,,,0.561,,,,0.041,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+MCG -01-60-022,355.50917,-3.61333,0.02324,5.39,candidate,H30a,CO21,,,,,,,,,6.269,,,,5.231,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+MCG-03-34-064,200.59792,-16.72611,0.01719,6.2,candidate,H30a,CO21,,,,,,,,,0.887,,,,0.135,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 0034,2.7775,-12.1075,0.01978,17.05,candidate,H30a,13CO21+CO21,,,,,,,,,0.512,,,,0.152,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 0300,13.72042,-37.68583,0.00047,15.3,candidate,H30a,CO21,,,,,,,,,3.297,,,,0.953,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 0628,24.17167,15.79139,0.00218,21.54,candidate,H30a+H40a,CO21+CS21+HCN10+HCO+10,,,,,,,,,6.667,,,,21.997,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 0877,34.49708,14.54167,0.01292,11.82,candidate,H40a,HCN10+HCO+10,,,,,,,,,0.778,,,,1.909,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 1068,40.6725,-0.0125,0.00335,196.37,candidate,H30a+H40a,CO21+CS21+HCN10+HCO+10,,,,,,,,,0.372,,,,0.034,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 1097,41.57792,-30.27472,0.0043,53.35,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,0.925,,,,1.594,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 1266,49.00708,-2.42611,0.00732,13.13,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,0.97,,,,0.457,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 1365,53.40208,-36.13972,0.00546,94.31,candidate,H30a+H40a,13CO21+CO21+CS21+HCN10+HCO+10,,,,,,,,,7.268,,,,22.146,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 1448,56.13375,-44.64472,0.00388,10.32,candidate,H30a,CO21,,,,,,,,,9.267,,,,5.867,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 1511,59.90583,-67.635,0.00443,25.38,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,7.699,,,,56.413,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 1566,64.99917,-54.935,0.00499,22.53,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,6.805,,,,56.446,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 1614,68.50042,-8.57944,0.01583,32.12,candidate,H30a+H40a,13CO21+CO21+CS21+HCN10+HCO+10,,,,,,,,,0.446,,,,0.139,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 1672,71.42792,-59.24667,0.0045,41.21,candidate,H30a+H40a,CO21+CS21+HCN10+HCO+10,,,,,,,,,7.0,,,,23.537,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 2623,129.59917,25.75472,0.01847,23.74,candidate,H30a+H40a,13CO21+CO21+CS21,,,,,,,,,0.501,,,,0.123,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 2964,145.73042,31.84556,0.00444,12.07,candidate,H30a,CO21,,,,,,,,,8.568,,,,5.863,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 3110,151.01125,-6.47639,0.01698,11.28,candidate,H30a+H40a,CO21+CS21,,,,,,,,,0.532,,,,0.133,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 3281,157.96708,-34.85389,0.01067,6.73,candidate,H30a,CO21,,,,,,,,,0.504,,,,0.503,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 3351,160.99208,11.70278,0.00257,19.66,candidate,H30a+H40a,CO21+CS21+HCN10+HCO+10,,,,,,,,,0.402,,,,0.056,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 3521,166.455,-0.0375,0.00246,49.19,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,9.478,,,,56.317,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 3621,169.56958,-32.81306,0.00243,29.32,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,7.234,,,,56.304,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4038/9,180.47958,-18.87861,0.00521,45.16,candidate,H30a+H40a,13CO21+CO21+CS21,,,,,,,,,0.435,,,,0.093,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4254,184.7125,14.41389,0.00802,37.46,candidate,H30a+H40a,CO21+CS21+HCN10+HCO+10,,,,,,,,,8.748,,,,23.621,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4298,185.39875,14.60194,0.00381,7.02,candidate,H30a,13CO21+CO21,,,,,,,,,6.936,,,,23.408,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4303,185.48083,4.47333,0.00524,37.27,candidate,H30a+H40a,CO21+CS21+HCN10+HCO+10,,,,,,,,,7.606,,,,23.557,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4321,185.72458,15.82278,0.00524,26.0,candidate,H30a+H40a,CO21+CS21+HCN10+HCO+10,,,,,,,,,9.295,,,,23.557,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4383,186.35833,16.46778,0.0057,8.36,candidate,H30a,13CO21+CO21,,,,,,,,,6.415,,,,23.452,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4388,186.44125,12.66389,0.00842,10.27,candidate,H30a,CO21,,,,,,,,,3.496,,,,0.574,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4418,186.72792,-0.87833,0.00702,43.89,candidate,H30a+H40a,CO21+CS21+HCN10+HCO+10,,,,,,,,,0.465,,,,0.064,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4501,187.99,14.42222,0.00762,19.68,candidate,H30a,13CO21+CO21,,,,,,,,,0.906,,,,0.024,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4532,188.5775,6.46972,0.00669,9.21,candidate,H30a,13CO21+CO21,,,,,,,,,7.454,,,,23.476,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4536,188.61875,2.18556,0.00601,30.26,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,8.534,,,,56.504,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4568/7,189.14042,11.24222,0.00755,20.81,candidate,H30a,13CO21+CO21,,,,,,,,,7.581,,,,23.494,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4579,189.4275,11.82,0.00507,5.93,candidate,H30a,CO21,,,,,,,,,3.496,,,,0.54,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4631,190.52958,32.5425,0.0021,85.4,candidate,H40a,CS21,,,,,,,,,1.215,,,,1.444,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4651,190.92542,16.39389,0.00269,5.6,candidate,H30a,13CO21+CO21,,,,,,,,,6.704,,,,23.382,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 4808,193.95333,4.305,0.0026,6.92,candidate,H30a,13CO21+CO21,,,,,,,,,8.274,,,,23.379,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 5257/8,204.97875,0.83528,0.02268,10.73,candidate,H30a,CO21,,,,,,,,,8.303,,,,4.023,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 5427,210.85667,-6.03,0.00873,10.24,candidate,H30a,CO21,,,,,,,,,7.922,,,,4.882,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 6240,253.24417,2.40083,0.02434,22.94,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,0.637,,,,0.397,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 6300,259.25125,-62.82028,0.0037,16.72,candidate,H40a,CS21+HCN10+HCO+10,,,,,,,,,9.817,,,,56.37,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 6744,287.44125,-63.8575,0.00281,18.92,candidate,H30a,CO21,,,,,,,,,12.432,,,,23.499,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 6907,306.27458,-24.80889,0.01054,14.14,candidate,H30a,13CO21+CO21,,,,,,,,,18.866,,,,23.568,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 6926,308.27,-2.0275,0.01991,7.09,candidate,H30a,13CO21+CO21,,,,,,,,,9.105,,,,23.772,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 7591,349.56542,6.585,0.01655,7.87,candidate,H30a,13CO21+CO21,,,,,,,,,7.897,,,,23.708,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 7592,349.5925,-4.41556,0.02416,8.05,candidate,H30a,CO21,,,,,,,,,7.352,,,,5.414,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+NGC 7679,352.19583,3.51278,0.01716,7.4,candidate,H30a,13CO21+CO21,,,,,,,,,7.706,,,,5.87,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+UGC 03094,68.89125,19.17111,0.02471,6.35,candidate,H30a,CO21,,,,,,,,,6.738,,,,22.557,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+UGC 08387,200.14542,34.14,0.02335,17.04,candidate,H30a,CO21,,,,,,,,,0.608,,,,0.139,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+UGC 09913,233.73792,23.50278,0.01818,104.09,candidate,H30a+H40a,CO21+CS21+HCN10+HCO+10,,,,,,,,,0.405,,,,0.022,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4
+VV 340a,224.25125,24.61694,0.0333,6.95,candidate,H30a,CO21,,,,,,,,,0.391,,,,0.163,nan,download (~? GB selective-est) → wave onboard → frozen stage 1-4

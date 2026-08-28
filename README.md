@@ -1,47 +1,59 @@
-# ALMA HRL survey — thesis code
+# ALMA archival HRL survey — pipeline and templates
 
-Analysis pipeline, workflow scripts, and per-galaxy script templates for the
-master's thesis "Hydrogen Recombination Lines in Nearby Galaxies: Harvesting
-the ALMA Archive" (Zhengxu Hou, AIfA Bonn, 2026).
+Analysis code of the master's thesis *Hydrogen Recombination Lines in
+Nearby Galaxies: Harvesting the ALMA Archive* (Zhengxu Hou, AIfA, University
+of Bonn, 2026). The survey measures millimeter recombination-line fluxes, or
+upper limits, with one frozen prescription for every source, and places them
+on the L_HRL–L_TIR correlation.
 
-The survey measures millimeter hydrogen recombination lines (H30a, H40a) in
-nearby galaxies from archival ALMA data with one frozen prescription: a
-measurement aperture built from a bright molecular tracer line, a
-recombination-line flux integrated inside it, a globally calibrated
-uncertainty, and an aperture-matched infrared luminosity for the
-L(HRL)-L(TIR) correlation.
+This repository is a **template**: the pipeline is global and frozen, so a
+new source is added by writing one small configuration file and running the
+stages in order — not by tuning the analysis per galaxy. Start with
+`template/NEW_SOURCE.md`.
 
 ## Layout
 
-| Path | Content |
+| Directory | Contents |
 |---|---|
-| `code/_step3/` | The shared analysis package: uniform-batch stages 1-4 (aperture, spectroscopy, infrared side, correlation plot), mask/baseline/flux modules, survey registry, distance adoption, plot style; `tests/` with runnable fixtures |
-| `code/{galaxy}_analyse_code/` | Per-galaxy script templates: `step-1_download.py` (selective ALMA download), `step0_cleanup.sh`, `step1_uvcontsub.py`, `step2_imaging.py` (CASA re-imaging fallback), `step3_analyze.py` |
-| `code/target_list_build/` | Sample selection workflow: RBGS x DEC x Spitzer-8um chain, ALMA archive scout, KS selection checks, table builders |
-| `code/_continuum_aperture/` | Continuum cross-check tooling |
-| `code/_galaxy_audit/` | 36-configuration audit tables |
-| `code/_cleanup/` | Working-directory hygiene scripts |
-| `code/run_null_test.py`, `code/analyze_null_test.py` | Translated-aperture null diagnostics |
-| `code/download_all_table_b.sh` | Batch download driver |
+| `_step3/` | The shared analysis package and the survey batch drivers (stages 1–4), figure/table generators, and bookkeeping scripts. Script-by-script inventory: thesis Appendix "Analysis software". |
+| `target_list_build/` | Sample selection: `rbgs_seip_intersect.py` (RBGS × declination × Spitzer-coverage criteria), `alma_scout.py` (per-candidate ALMA archive metadata), `selection_ks_check.py` (selection-bias checks). |
+| `apportioning/` | `masklevel_x.py` — aperture-matched 8 μm apportioning of the total infrared luminosity (kept next to its data product, `s5_results.csv`). |
+| `galaxies/` | One folder per processed source with its configuration record `step3_analyze.py` and its retrieval script `step-1_download.py`. For NGC 3628, additionally the CASA re-imaging scripts (`step1_uvcontsub.py`, `step2_imaging.py`) used for the one imaging cross-check. |
+| `tables/` | The survey tables: `survey_registry.csv` (all 142 targets — processed sources **and the 95 queued candidates** with archive metadata), `master_table.csv` (per-source results), `source_table.csv` (correlation-diagram coordinates per source), `stage1_masks.csv`, `stage2_flux.csv`, `stage3_ir.csv`, `adopted_distances.csv`, `iras_errors.csv`. |
+| `template/` | `step3_analyze.py` skeleton + `NEW_SOURCE.md` walkthrough for adding a source. |
 
-## Environment
+## Pipeline order
 
-All scripts run inside a conda environment (`casa_env`) providing astropy,
-astroquery, casatools/casatasks, radio-beam, reproject, matplotlib, and
-pypdf. Cube handling is memory-mapped throughout; gzip-compressed FITS are
-decompressed to scratch before mapping.
+selection (`target_list_build/`) → retrieval (`galaxies/*/step-1_download.py`)
+→ `_step3/uniform_batch_stage1.py` (aperture from the bright tracer)
+→ `_step3/uniform_batch_stage2.py` (line width, flux, uncertainty, S/N)
+→ `_step3/uniform_batch_stage3_ir.py` + `_step3/uniform_batch_rbgs_flux_patch.py`
+  + `apportioning/masklevel_x.py` (infrared axis)
+→ `_step3/uniform_batch_stage4_plot.py` (correlation diagram; a rerun prints
+  the headline statistics quoted in the thesis)
++ `_step3/uniform_batch_master_table.py`, `_step3/uniform_batch_source_table.py`,
+  `_step3/uniform_batch_mom0_gallery.py`, `_step3/uniform_batch_null_diag_fig.py`
+  (tables and figures), `_step3/survey_registry.py` (bookkeeping).
 
-## Related repository
+## Notes for use
 
-The generic ALMA archive query package used by the selection workflow is
-maintained separately at
-[hou-physics/alma-archive-tools](https://github.com/hou-physics/alma-archive-tools).
-Two scripts under `code/target_list_build/` import it via an absolute local
-path; point that path at a checkout of the package to run them elsewhere.
+- **Run layout.** The batch drivers glob `*_analyse_code/step3_analyze.py`
+  next to `_step3/`; the `galaxies/` folder collects these per-source
+  directories for readability — place (or symlink) them beside `_step3/`
+  when running, and adjust the absolute data paths in the configuration
+  records to your machine.
+- **Configuration records are parsed, not executed.** The per-source
+  `step3_analyze.py` files are read by `_step3/uniform_batch_configs.py`
+  for paths, lines, and redshifts; their docstrings are the working notes
+  from ingestion and are kept as provenance.
+- **Requirements.** Python ≥ 3.10 with `numpy`, `scipy`, `astropy`,
+  `matplotlib`, `astroquery`, `requests`, `reproject`; CASA only for the
+  optional re-imaging path.
+- Every numerical parameter is frozen; values and justifications are
+  registered in the thesis (Appendix A). Do not tune per source.
 
-## Data
+## Citation
 
-FITS cubes, CASA intermediates, and per-galaxy products are not part of this
-repository. Scripts reference the survey's local directory layout
-(`work_dir/{GALAXY}/`, `result_v2/_uniform_batch/`) and serve as templates
-for reproducing the processing on downloaded archival data.
+Zhengxu Hou, *Hydrogen Recombination Lines in Nearby Galaxies: Harvesting
+the ALMA Archive*, MSc thesis, Argelander-Institut für Astronomie,
+University of Bonn, 2026.

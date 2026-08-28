@@ -1,6 +1,0 @@
-imagename = '/Volumes/HouAstro/master/master_thesis/work_dir/NGC4945/NGC4945_H30a_spw1_v1.im'
-mode      = 'summary'
-hdkey     = ''
-hdvalue   = ''
-verbose   = False
-#imhead( imagename='/Volumes/HouAstro/master/master_thesis/work_dir/NGC4945/NGC4945_H30a_spw1_v1.im',mode='summary',hdkey='',hdvalue='',verbose=False )
