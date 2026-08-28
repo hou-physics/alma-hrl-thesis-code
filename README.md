@@ -32,8 +32,7 @@ selection (`target_list_build/`) → retrieval (`galaxies/*/step-1_download.py`)
 → `_step3/uniform_batch_stage4_plot.py` (correlation diagram; a rerun prints
   the headline statistics quoted in the thesis)
 + `_step3/uniform_batch_master_table.py`, `_step3/uniform_batch_source_table.py`,
-  `_step3/uniform_batch_mom0_gallery.py`, `_step3/uniform_batch_null_diag_fig.py`
-  (tables and figures), `_step3/survey_registry.py` (bookkeeping).
+  `_step3/uniform_batch_mom0_gallery.py` (tables and figures), `_step3/survey_registry.py` (bookkeeping).
 
 ## Notes for use
 
