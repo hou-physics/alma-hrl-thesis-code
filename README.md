@@ -20,7 +20,7 @@ stages in order — not by tuning the analysis per galaxy. Start with
 | `apportioning/` | `masklevel_x.py` — aperture-matched 8 μm apportioning of the total infrared luminosity (kept next to its data product, `s5_results.csv`). |
 | `galaxies/` | One folder per processed source with its configuration record `step3_analyze.py` and, where the source was retrieved by script, its `step-1_download.py`. The 13 wave-1 sources are configured by the single onboarding table `galaxies/wave1_configs.csv` instead of per-source scripts. For NGC 3628, additionally the CASA re-imaging scripts (`step1_uvcontsub.py`, `step2_imaging.py`) used for the one imaging cross-check. |
 | `tables/` | The survey tables: `survey_registry.csv` (all 142 targets — processed sources **and the 95 queued candidates** with archive metadata), `master_table.csv` (per-source results), `source_table.csv` (correlation-diagram coordinates per source), `stage1_masks.csv`, `stage2_flux.csv`, `stage3_ir.csv`, `adopted_distances.csv`, `iras_errors.csv`. |
-| `template/` | `step3_analyze.py` skeleton + `NEW_SOURCE.md` walkthrough for adding a source. |
+| `template/` | `step-1_download.py` retrieval skeleton, `step3_analyze.py` configuration skeleton, and the `NEW_SOURCE.md` walkthrough for adding a source. |
 
 ## Pipeline order
 
@@ -35,6 +35,13 @@ selection (`target_list_build/`) → retrieval (`galaxies/*/step-1_download.py`)
   `_step3/uniform_batch_mom0_gallery.py` (tables and figures), `_step3/survey_registry.py` (bookkeeping).
 
 ## Notes for use
+
+- **About the step numbering.** `step-1` is archive retrieval; `_step3/` is
+  the analysis package. There is deliberately no general step 1/2 in
+  between: the survey measures on archive image products, and imaging from
+  the calibrated visibilities (`step1_uvcontsub.py`, `step2_imaging.py`) is
+  a reserve path exercised once, for the NGC 3628 cross-check (thesis,
+  methods chapter).
 
 - **Run layout.** The batch drivers glob `*_analyse_code/step3_analyze.py`
   next to `_step3/`; the `galaxies/` folder collects these per-source

@@ -5,9 +5,11 @@
    source outside the registry, run the selection chain:
    `target_list_build/rbgs_seip_intersect.py` (sample criteria), then
    `target_list_build/alma_scout.py` (archive metadata per candidate).
-2. **Retrieval.** Generate a per-source download script (the shipped
-   `galaxies/*/step-1_download.py` files are worked examples: archive URLs
-   plus canonical renaming of the cubes).
+2. **Retrieval.** Copy `template/step-1_download.py`, fill in the five TODO
+   constants (MOUS, destination, redshift, name, line list), and run it: it
+   downloads the archive products with resume, reconstructs the nonpbcor
+   cube, and creates the canonically named symlinks. The shipped
+   `galaxies/*/step-1_download.py` files are worked examples.
 3. **Configuration.** Copy `template/step3_analyze.py` to
    `galaxies/{galaxy}_analyse_code/step3_analyze.py` and fill in paths,
    lines, redshift, window.

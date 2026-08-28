@@ -1,0 +1,167 @@
+##############################################################################
+# Step -1: ALMA archive retrieval — TEMPLATE
+#
+# Copy to  galaxies/{galaxy}_analyse_code/step-1_download.py  and fill in the
+# five TODO constants below. The shipped per-source scripts are worked
+# examples of exactly this skeleton. Blocks, in order: probe the MOUS ->
+# regex-select product files -> fallback URL list -> resumable download ->
+# reconstruct nonpbcor = pbcor x pb -> canonical renaming
+# ({GALAXY}_{line}_{pbcor|nonpbcor|pb}) + file_mapping.txt.
+#
+# A generalized archive-query tool that generates such scripts (cone search,
+# line-coverage filter, sensitivity ranking) is available at
+# https://github.com/hou-physics/alma-archive-tools
+##############################################################################
+
+import re
+from pathlib import Path
+from astroquery.alma import Alma
+
+MOUSID = "uid://A00X/XXXX/XXX"  # TODO: MOUS of the chosen observation
+REGEX  = r"_sci\..*\.cube\.I\.(pbcor\.fits|pb\.fits\.gz)$"
+DEST   = Path("/path/to/work_dir/GALAXY")  # TODO: data destination
+DEST.mkdir(parents=True, exist_ok=True)
+
+print(f"Probing data info for {MOUSID} ...")
+alma = Alma()
+info = alma.get_data_info(MOUSID, expand_tarfiles=True)
+
+def _row_size_bytes(row):
+    try:
+        return int(row["content_length"])
+    except (ValueError, TypeError, KeyError):
+        return 0
+
+
+# Select URLs whose filename matches the scenario regex; track sizes.
+matched = [(str(row["access_url"]), _row_size_bytes(row))
+           for row in info if re.search(REGEX, str(row["access_url"]))]
+matched_urls = [u for u, _ in matched]
+total_bytes = sum(sz for _, sz in matched)
+total_gb = total_bytes / 1e9
+
+# Write URL list as fallback (for manual `wget -c -i download_urls.txt`).
+urls_file = DEST / "download_urls.txt"
+with open(urls_file, "w") as f:
+    for url in matched_urls:
+        f.write(f"{url}\n")
+print(f"Fallback URL list written to {urls_file}")
+print("  (if astroquery download fails, use: wget -c -i download_urls.txt)")
+print()
+
+print(f"Matched {len(matched_urls)} URLs, total {total_gb:.2f} GB.")
+print(f"Downloading to {DEST} ...")
+print(f"  regex filter: {REGEX}")
+print(f"  continuation (byte-level resume): True")
+print()
+
+# `download_files` accepts direct file URLs and supports byte-level resume.
+# (Do NOT use `download_and_extract_files` here — that API requires tarball
+#  URLs, but expand_tarfiles=True already gave us individual file URLs.)
+alma.download_files(
+    matched_urls,
+    savedir=str(DEST),
+    cache=True,
+    continuation=True,      # resume interrupted downloads at byte level
+)
+
+
+# Post-processing: ALMA ARI-L archive only publishes pbcor + PB, not non-pbcor.
+# Reconstruct non-pbcor = pbcor × pb (mathematically identical to the tclean
+# `.image` output that step2 would otherwise produce).
+print()
+print("Reconstructing non-pbcor cubes = pbcor × pb ...")
+from astropy.io import fits
+for pbcor_path in sorted(DEST.glob("*_sci.*.cube.I.pbcor.fits")):
+    stem = pbcor_path.name.replace(".cube.I.pbcor.fits", "")
+    pb_path = DEST / f"{stem}.cube.I.pb.fits.gz"
+    nonpbcor_path = DEST / f"{stem}.cube.I.nonpbcor.fits"
+    if not pb_path.exists():
+        print(f"  SKIP {pbcor_path.name}: matching pb file not found")
+        continue
+    if nonpbcor_path.exists():
+        print(f"  SKIP {nonpbcor_path.name}: already exists")
+        continue
+    with fits.open(pbcor_path) as h_pbcor, fits.open(pb_path) as h_pb:
+        nonpbcor_data = h_pbcor[0].data * h_pb[0].data
+        fits.PrimaryHDU(
+            data=nonpbcor_data, header=h_pbcor[0].header
+        ).writeto(nonpbcor_path)
+    print(f"  wrote {nonpbcor_path.name}")
+
+# Detect which configured line falls in each SPW, create canonical symlinks.
+import numpy as np
+
+Z = 0.001234        # TODO: heliocentric redshift (tags each SPW with its line)
+GALAXY_SAFE = "GALAXY"  # TODO: canonical name (uppercase, no space/underscore)
+LINE_TABLE = [                    # TODO: the lines this observation covers
+    ("H30a", 231.90092784),       # rest frequencies in GHz
+    ("CO21", 230.538),
+]
+
+def _spw_freq_range_hz(fpath):
+    with fits.open(fpath) as h:
+        hdr = h[0].header
+        f0 = float(hdr["CRVAL3"])
+        df = float(hdr["CDELT3"])
+        n = int(hdr["NAXIS3"])
+        crpix = float(hdr["CRPIX3"])
+        freqs = f0 + (np.arange(n) + 1 - crpix) * df
+    return float(min(freqs[0], freqs[-1])), float(max(freqs[0], freqs[-1]))
+
+def _spw_num(name):
+    m = re.search(r"\.spw(\d+)_", name)
+    return m.group(1) if m else "unknown"
+
+print()
+print(f"Detecting lines in each SPW (z={Z}) ...")
+mapping = []
+for pbcor_path in sorted(DEST.glob("*_sci.*.cube.I.pbcor.fits")):
+    f_min, f_max = _spw_freq_range_hz(pbcor_path)
+    matched_line = None
+    for line_name, rest_ghz in LINE_TABLE:
+        obs_hz = (rest_ghz / (1.0 + Z)) * 1e9
+        if f_min <= obs_hz <= f_max:
+            matched_line = line_name
+            break
+    label = matched_line if matched_line else f"spw{_spw_num(pbcor_path.name)}"
+    stem = pbcor_path.name.replace(".cube.I.pbcor.fits", "")
+
+    for old_suffix, new_suffix in [
+        (".cube.I.pbcor.fits", "_pbcor.fits"),
+        (".cube.I.nonpbcor.fits", "_nonpbcor.fits"),
+        (".cube.I.pb.fits.gz", "_pb.fits.gz"),
+    ]:
+        old = DEST / f"{stem}{old_suffix}"
+        new = DEST / f"{GALAXY_SAFE}_{label}{new_suffix}"
+        if not old.exists():
+            continue
+        if new.is_symlink():
+            if new.resolve() == old.resolve():
+                continue  # already correct
+            new.unlink()  # replace stale link
+        elif new.exists():
+            print(f"  SKIP {new.name}: regular file exists (not a symlink), refusing to overwrite")
+            continue
+        new.symlink_to(old.name)  # relative symlink
+        mapping.append((new.name, old.name))
+        line_tag = matched_line or "untagged"
+        print(f"  [{line_tag}] {new.name} -> {old.name[:70]}...")
+
+# Write file_mapping.txt
+mapping_path = DEST / "file_mapping.txt"
+with open(mapping_path, "w") as f:
+    f.write(f"# Generated by step-1_download.py\n")
+    f.write(f"# Galaxy: {GALAXY_SAFE}  z={Z}\n")
+    f.write(f"# short_name  ->  original_name\n")
+    for short, orig in mapping:
+        f.write(f"{short}  ->  {orig}\n")
+print(f"File mapping saved: {mapping_path}")
+
+
+
+print()
+print("Done. Files in destination:")
+for f in sorted(DEST.iterdir()):
+    if f.is_file():
+        print(f"  {f.name}  ({f.stat().st_size / 1e9:.2f} GB)")
