@@ -48,7 +48,10 @@ selection (`target_list_build/`) → retrieval (`galaxies/*/step-1_download.py`)
   directories for readability — place (or symlink) them beside `_step3/`
   when running. The scripts carry absolute data paths from the machine the
   survey ran on: adjust the path constants at the top of the batch drivers
-  (and in the configuration records) to your layout.
+  (and in the configuration records) to your layout. One path sits
+  mid-file: `_step3/uniform_batch_configs.py` reads the wave-1 table from
+  the survey machine's `work_dir/_wave1/`; repoint it to
+  `galaxies/wave1_configs.csv` when reproducing.
 - **Configuration records are parsed, not executed.** The per-source
   `step3_analyze.py` files are read by `_step3/uniform_batch_configs.py`
   for paths, lines, and redshifts; their docstrings are the working notes
