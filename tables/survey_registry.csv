@@ -1,6 +1,6 @@
 name,ra,dec,z,f60_Jy,status,hrl_line,tracer,F_Jykms,sigma_F,SN,W_kms,mask_area_beams,mask_area_arcsec2,rms_chan_mJy,rms10_mJy,rms10_pred_mJy,ir_R90_arcsec,ir_size_source,coverage,best_res_arcsec,est_size_GB,next_step
 ngc253,11.88867,-25.28824,0.00080,967.81,measured-detected,H40a,CS21,4.4389,0.1483,29.93,264.7,417.1,392.2,7.436,2.882,,195.3,WISE W4 CoG (SB-truncated),partial,,,done
-ngc4945,196.36367,-49.46789,0.00188,625.46,measured-detected,H30a,CO21,8.6669,0.565,15.34,386.8,266.8,93.3,9.019,9.085,,252.7,WISE W4 CoG (SB-truncated),partial,,,done
+ngc4945,196.36367,-49.46789,0.00188,625.46,measured-detected,H30a,CO21,9.8144,0.6631,14.8,386.8,266.8,93.3,10.585,10.662,,252.7,WISE W4 CoG (SB-truncated),partial,,,done
 eso097-013,213.29127,-65.33902,0.001448,,measured-marginal,H40a,CS21,0.4928,0.0952,5.17,299.2,79.1,557.6,1.589,1.74,,139.3,WISE W4 CoG (SB-truncated),partial,,,adjudicated — done
 he2-10,129.06329,-26.40935,0.002912,,measured-marginal,H40a,CS21,0.1931,0.0351,5.5,100.0,22.7,94.2,1.428,1.11,,79.8,WISE W4 CoG — unresolved (≤ Atlas PSF),covered-unresolved,,,adjudicated — done
 ngc3628,170.07041,13.59166,0.002772,54.8,measured-marginal,H30a,CO21,1.5165,0.22,6.89,327.3,120.2,175.7,10.797,3.845,,203.8,WISE W3 CoG (SB-truncated),partial,,,adjudicated — done

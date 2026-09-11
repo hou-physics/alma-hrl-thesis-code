@@ -21,6 +21,7 @@ from astropy.io import fits
 sys.path.insert(0, str(Path(__file__).parent))
 from uniform_batch_configs import build_table          # noqa: E402
 from uniform_batch_stage1 import REST_HZ               # noqa: E402
+from uniform_contour_poc import channel_velocities      # noqa: E402
 
 OUT = Path("/Volumes/HouAstro/master/result_v2/_uniform_batch")
 C_KMS = 299792.458
@@ -57,14 +58,28 @@ def main():
             sn = fnum(r2["SN"]) / SIGMA_CAL
             tier = ("detected" if sn >= 5 else
                     "marginal" if sn >= 3 else "upper-limit")
-        # cube header: channel width + beam
-        dv = bmaj = bmin = np.nan
+        # cube header: beam, and the velocity axis on the same reference
+        # stage 2 used (line rest frequency at the source redshift), so the
+        # channel width and the integration channel count below reproduce
+        # the ones calc_flux_sn worked with (decisions 2026-09-11 (45)/(46))
+        dv = bmaj = bmin = n_chan = np.nan
         try:
             hdr = fits.getheader(cfg[g]["hrl_path"])
-            nu = float(hdr["CRVAL3"])
-            dv = C_KMS * abs(float(hdr["CDELT3"])) / nu
+            rest_h = REST_HZ[cfg[g]["weak_line"]] / (1.0 + float(cfg[g]["z"]))
+            v_h, _ = channel_velocities(hdr, rest_h)
+            dv = float(np.abs(np.median(np.diff(v_h))))
             bmaj = float(hdr["BMAJ"]) * 3600
             bmin = float(hdr["BMIN"]) * 3600
+            W_i, v_cen = fnum(r2.get("W_used")), fnum(r2.get("v_cen"))
+            if np.isfinite(W_i) and np.isfinite(v_cen):
+                # integer channel count of the integration window exactly as
+                # calc_flux_sn builds it: centre channel nearest v_cen,
+                # half-width round(W/dv/2), clipped to the cube edges
+                center_ch = int(np.argmin(np.abs(v_h - v_cen)))
+                half = int(round(W_i / dv / 2.0))
+                ch_left = max(0, center_ch - half)
+                ch_right = min(len(v_h) - 1, center_ch + half)
+                n_chan = ch_right - ch_left + 1
         except Exception:
             pass
         beam_area = 1.133 * bmaj * bmin if np.isfinite(bmaj) else np.nan
@@ -74,7 +89,6 @@ def main():
         F, sig, sn = fnum(r2.get("F")), fnum(r2.get("sigma_F")), fnum(r2.get("SN"))
         # per-channel RMS of the mask-integrated spectrum (Frank's "RMS at
         # that area"), native Δv and normalized to the 10 km/s reference
-        n_chan = W / dv if np.isfinite(W) and np.isfinite(dv) and dv > 0 else np.nan
         rms_chan = sig / (np.sqrt(n_chan) * dv) * 1e3 \
             if np.isfinite(n_chan) and n_chan > 0 else np.nan       # mJy
         rms10 = rms_chan * np.sqrt(dv / 10.0) if np.isfinite(rms_chan) else np.nan
